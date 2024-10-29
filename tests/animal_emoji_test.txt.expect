@@ -1,0 +1,9 @@
+Valid ASCII: false
+Uppercased ASCII: 🐩ABC🐩DEF
+Length in bytes: 14
+Number of code points: 8
+Bytes per code point: 4 1 1 1 4 1 1 1 
+Substring of the first 6 code points: "🐩abc🐩d"
+Code points as decimal numbers: 128041 97 98 99 128041 100 101 102 
+Animal emojis: 🐩 🐩
+Next Character of Codepoint at Index 3: d

@@ -1,0 +1,12 @@
+Consider the 3-byte sequence 11100000 10000000 10100001. Answer the following questions:
+What code point does it encode in UTF-8, and what character is that?
+The code point is 33 in decimal, and the character is “!”. I found this out because only the last byte is significant, and when looking at the last byte, only the last 6 bits are significant, so when converting that to decimal, it would be 33, and thus the character would be “!”.
+
+What are the three other ways to encode that character?
+The other three ways to encode “!” are as 1 byte, 2 bytes, and 4 bytes. For 1 byte, it would be 00100001 because only the last 6 bits (100001) are significant and the first two bits would be 00. For 2 bytes, it would be 11000000 10100001 because the first byte tells you that it is a 2-byte sequence, and the last byte is the continuation byte with the last 6 bits being 100001. For 4 bytes, it would be 11110000 10000000 10000000 10100001 because the first byte tells you that it is a 4-byte sequence, and the middle two bytes are the continuation bytes, and the last byte is the continuation byte with the last 6 bits being 100001.
+
+Give an example of a character that has exactly three encodings (but not four, like the one in the previous example does)
+A character that has exactly three encodings would be any character that has a 2-byte sequence. Therefore, an example would be the inverted question mark, “¿”. The three encodings would be 11000010 10111111 for 2 bytes, 11100000 10000010 10111111 for 3 bytes, and 11110000 10000000 10000010 10111111 for 4 bytes.
+
+What are some problems with having these multiple encodings, especially for ASCII characters? A web search for “overlong UTF-8 encoding” may be useful here.
+Overlong UTF-8 encoding refers to the practice of encoding a character using more bytes than necessary. An example would be encoding a 2-byte sequence as a 4-byte sequence like what we did in the previous question. This could lead to problems like security risks if some systems do not treat the different encodings the same way. Another problem could be difficulty in debugging because it could be troublesome and complicated for developers when they are trying to figure out why their output (a specific character) is not being displayed correctly. Another problem could be slower data processing because overlong UTF-8 encodings consume more bytes than necessary, which could lead to increased storage requirements.

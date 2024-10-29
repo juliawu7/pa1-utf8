@@ -1,0 +1,9 @@
+Valid ASCII: true
+Uppercased ASCII: HELLO
+Length in bytes: 5
+Number of code points: 5
+Bytes per code point: 1 1 1 1 1 
+Substring of the first 6 code points: "hello"
+Code points as decimal numbers: 104 101 108 108 111 
+Animal emojis: 
+Next Character of Codepoint at Index 3: m
